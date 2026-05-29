@@ -106,3 +106,22 @@ html[dir="ltr"] .text-left { text-align: right; }
     opacity: 1;
     transform: scale(1);
 }
+@media (max-width: 768px) {
+  /* هذه الأوامر ستطبق فقط على الجوال */
+  body {
+    width: 100%;
+    padding: 10px;
+  }
+  
+  /* اجعلي الصور تأخذ عرض الشاشة بالكامل */
+  img {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  /* إذا كان لديكِ توزيع (Flexbox أو Grid)، اجعليه عمودياً */
+  .container {
+    flex-direction: column;
+  }
+}
+
