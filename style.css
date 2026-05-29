@@ -124,4 +124,27 @@ html[dir="ltr"] .text-left { text-align: right; }
     flex-direction: column;
   }
 }
+/* هذا الكود يجعل أي صورة داخل الموقع لا تتجاوز عرض شاشة الجوال */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto; /* هذا يجعل الصورة في المنتصف */
+}
+
+/* هذا الكود خاص بترتيب اللوحة والوصف على الجوال */
+@media (max-width: 768px) {
+    .painting-container { /* استبدلي هذا الاسم بالـ class الخاص باللوحة والوصف عندك */
+        display: flex;
+        flex-direction: column; /* يجعل الصورة فوق والوصف تحتها */
+        align-items: center;
+        padding: 10px;
+    }
+    
+    .description { /* استبدلي هذا باسم الـ class الخاص بوصف اللوحة */
+        font-size: 14px; /* تصغير الخط قليلاً ليناسب الجوال */
+        text-align: center;
+        margin-top: 10px;
+    }
+}
 
