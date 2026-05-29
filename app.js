@@ -15,7 +15,7 @@ const artworks = [
         hours: "42",
         desc_ar: "هذه ليست لوحة ألم، بل لوحة امرأة واجهت وجعها ولم تنكسر. في عينيها أثر معركة، وفي ملامحها هدوء من عرف الألم وتجاوزه. الفراشات حولها ترمز لكل جزء تألّم ثم تحرر, ولكل ندبة تحوّلت إلى قوة. إنها امرأة لم يملكها الألم… بل جعلته جزءًا من نورها.",
         desc_en: "She is not made of pain— she is made of what survived it. Every butterfly is a wound turned into freedom. She did not break. She became light.",
-        image: "assets/Capture d’écran 2026-04-30 à 8.12.23 PM.png"
+        image: "https://i.postimg.cc/fLCgmPfh/Capture-d-e-cran-2026-04-30-a-8-12-23-PM.png"
     },
     {
         title_ar: "صوت خلف صمت", 
@@ -23,7 +23,7 @@ const artworks = [
         hours: "62",
         desc_ar: "ليست هذه لوحة عن قناع… بل عن الحقيقة حين تتعب من الاختباء. وجه يبتسم للعالم، وآخر يبقى خلفه يحمل ما لم يُقل. في ملامحها صمت ثقيل، وفي عينيها صوت لا يخرج… لكنه حاضر. تحمل قناعها بيدٍ ثابتة، لا لتختبئ خلفه… بل لأنها تعرف تمامًا متى ترتديه ومتى تكشف ما وراءه. 'صوت خلف صمت' تحكي عن تلك المسافة بين ما نُظهره… وما نعيشه بصمت.",
         desc_en: "This is not a painting about a mask… but about the truth hidden behind it. One face meets the world, the other holds everything left unsaid. A silent expression with a voice that never disappeared.",
-        image: "assets/Capture d’écran 2026-04-30 à 8.13.01 PM.png"
+        image: "https://i.postimg.cc/fLCgmPfW/Capture-d-e-cran-2026-04-30-a-8-13-01-PM.png"
     },
     {
         title_ar: "لوحة نَذْر", 
@@ -31,7 +31,7 @@ const artworks = [
         hours: "22",
         desc_ar: "وجه هادئ يحمل عهدًا لا يُقال. في عينيها يقظة من عرف الثمن، وفي ملامحها صمت من اختار أن يواجه ظلّه بدل أن يهرب منه. هي ليست حكاية سقوط… بل حكاية قوّة وُلدت من العتمة، وصارت جزءًا منها دون أن تنتمي إليها.",
         desc_en: "A quiet face carrying an unspoken vow. In her eyes lives the awareness of someone who knows the cost, and in her silence, the strength of one who chose to face her shadow instead of running from it. This is not a story of falling but of power born from darkness.",
-        image: "assets/Capture d’écran 2026-04-30 à 8.12.45 PM.png"
+        image: "https://i.postimg.cc/pTC1zSJM/Capture-d-e-cran-2026-04-30-a-8-12-45-PM.png"
     },
     {
         title_ar: "تحت القمر… لا يولد الضعفاء ", 
@@ -39,7 +39,7 @@ const artworks = [
         hours: "17",
         desc_ar: "لم تولد في الضوء… بل في اللحظة التي صمت فيها القمر. تقف بهدوء لا يطلب الإذن ولا يخشى شيئًا، تحمل أسرارها كما لو أنها جزء من ليلها. في حضورها قوّة لا تحتاج إلى صوت، وفي نظرتها قرار لا يتراجع. هي لا تعلن الحرب… لكن كل شيء من حولها يعرف متى وصلت.",
         desc_en: "She was not born in sunlight, but in the moment the moon fell silent. She stands with a calm that asks for nothing and fears nothing, carrying her darkness like part of her own nature. Her power does not speak yet everything around her knows when she has arrived",
-        image: "assets/Capture d’écran 2026-04-30 à 8.12.33 PM.png"
+        image: "https://i.postimg.cc/sXsNBz7g/Capture-d-e-cran-2026-04-30-a-8-12-33-PM.png"
     }
 ];
 
