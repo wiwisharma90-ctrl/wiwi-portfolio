@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WIWI SHARMA — Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-midnight text-cream font-sans overflow-x-hidden">
+
+    <nav class="fixed top-0 w-full z-50 flex justify-between items-center px-8 py-6 backdrop-blur-md bg-opacity-10 bg-black">
+        <div class="text-2xl font-bold tracking-widest text-gold animate-pulse">WIWI SHARMA</div>
+        <div class="flex items-center gap-6">
+            <a href="#portfolio" class="hover:text-gold transition">المتحف</a>
+            <a href="#book" class="hover:text-gold transition">الكتاب</a>
+            <a href="#portrait-gallery" class="hover:text-gold transition">البورتريهات</a>
+            <button id="lang-btn" class="border border-gold px-4 py-1 rounded hover:bg-gold hover:text-midnight transition">EN</button>
+        </div>
+    </nav>
+
+    <section id="portfolio" class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+        <div class="spotlight"></div>
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between z-10 w-full max-w-6xl">
+            <div id="art-meta" class="w-full md:w-1/4 text-right order-2 md:order-1 my-6 md:my-0 reveal-element">
+                <h2 id="art-title" class="text-4xl font-extrabold text-gold mb-2">سيادةُ الألم</h2>
+                <p class="text-gray-400 text-sm"><span id="art-hours">42</span> ساعة عمل</p>
+            </div>
+            <div class="w-full md:w-2/5 flex justify-center order-1 md:order-2 perspective-container reveal-element">
+                <div id="art-frame" class="art-shadow bg-neutral-900 p-4 border-4 border-stone-800 rounded-sm transform transition duration-500 hover:scale-105">
+                    <img id="art-image" src="assets/Capture d’écran 2026-04-30 à 8.12.23 PM.png" alt="Artwork" class="w-72 h-96 object-cover">
+                </div>
+            </div>
+            <div id="art-desc-container" class="w-full md:w-1/4 text-left order-3 my-6 md:my-0 reveal-element">
+                <p id="art-desc" class="text-lg text-stone-300 leading-relaxed text-justify">
+                    هذه ليست لوحة ألم، بل لوحة امرأة واجهت وجعها ولم تنكسر. في عينيها أثر معركة، وفي ملامحها هدوء من عرف الألم وتجاوزه. الفراشات حولها ترمز لكل جزء تألّم ثم تحرر، ولكل ندبة تحوّلت إلى قوة. إنها امرأة لم يملكها الألم… بل جعلته جزءًا من نورها.
+                </p>
+            </div>
+        </div>
+        <button id="prev-btn" class="absolute left-8 text-4xl text-gold hover:scale-125 transition z-20">❮</button>
+        <button id="next-btn" class="absolute right-8 text-4xl text-gold hover:scale-125 transition z-20">❯</button>
+    </section>
+
+    <section id="book" class="relative min-h-screen w-full flex flex-col items-center justify-center bg-black bg-opacity-40 py-20 overflow-hidden">
+        <div class="spotlight"></div>
+        <div class="container mx-auto px-4 text-center z-10 max-w-5xl">
+            <h2 id="book-section-title" class="text-4xl font-extrabold text-gold mb-4 reveal-element">كتابي الرقمي</h2>
+            <p id="book-section-subtitle" class="text-stone-400 mb-12 max-w-xl mx-auto reveal-element">تصفح الفصول الأولى مجاناً وعش التجربة قبل الشراء</p>
+            <div class="flex flex-col lg:flex-row items-center justify-around gap-12 mt-6">
+                <div class="w-full lg:w-1/3 text-right order-2 lg:order-1 px-6 reveal-element">
+                    <h3 id="book-title" class="text-3xl font-bold text-cream mb-2">اسم الكتاب الفخم</h3>
+                    <p id="book-pages-count" class="text-gold text-sm mb-4">📄 180 صفحة من الإلهام</p>
+                    <p id="book-desc" class="text-stone-300 leading-relaxed mb-6 text-justify">
+                        هذا الكتاب يأخذك في رحلة عميقة وراء الكواليس، حيث يمتزج الفن بالقصص، ويكشف لك أسرار بناء الهوية البصرية من الصفر.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-start">
+                        <a href="https://drive.google.com/file/d/1UNjCsFYC5wsTdztYiyhE0hSvbodb-GwP/view?fbclid=PAdGRleASGk3xleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAadunlpl6skHxGbxDbqhucSNWvFt9B41taeVndBeZalGv8q_kCJa2ipAipzAFw_aem_OlnZ9N8A6wTRyLfQjJpyoQ&pli=1" target="_blank" id="download-sample-btn" class="border border-gold text-gold px-6 py-3 rounded-sm hover:bg-gold hover:text-midnight transition font-bold text-center">
+                            قراءة النسخة التجريبية (PDF)
+                        </a>
+                        <button id="open-book-modal" class="bg-gold text-midnight px-8 py-3 rounded-sm font-bold hover:bg-yellow-500 transition shadow-lg text-center">
+                            شراء الكتاب الكامل
+                        </button>
+                    </div>
+                </div>
+                <div class="w-full lg:w-1/2 flex justify-center order-1 lg:order-2 perspective-container reveal-element">
+                    <div class="book-container">
+                        <div class="book">
+                            <div class="page cover-front bg-stone-900 border-2 border-gold">
+                                <img src="assets/Capture d’écran 2026-05-29 à 4.21.24 PM.png" alt="الغلاف الأمامي" class="w-full h-full object-cover">
+                            </div>
+                            <div class="page page-inside">
+                                <img src="assets/Capture d’écran 2026-05-29 à 4.20.35 PM.png" alt="صفحة 1" class="w-full h-full object-cover">
+                            </div>
+                            <div class="page page-inside">
+                                <img src="assets/Capture d’écran 2026-05-29 à 4.20.47 PM.png" alt="صفحة 2" class="w-full h-full object-cover">
+                            </div>
+                            <div class="page page-inside">
+                                <img src="assets/Capture d’écran 2026-05-29 à 4.20.58 PM.png" alt="صفحة 3" class="w-full h-full object-cover">
+                            </div>
+                            <div class="page cover-back bg-stone-900 border-2 border-gold">
+                                <img src="assets/Capture d’écran 2026-05-29 à 4.21.09 PM.png" alt="الغلاف الخلفي" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portrait-gallery" class="relative min-h-screen w-full bg-midnight py-24 overflow-hidden">
+        <div class="spotlight"></div>
+        <div class="container mx-auto px-4 z-10 max-w-6xl text-center">
+            <h2 id="gallery-title" class="text-4xl font-extrabold text-gold mb-2 reveal-element">معرض لوحات البورتريه الخاص بي</h2>
+            <p id="gallery-subtitle" class="text-stone-400 mb-12 reveal-element">حول صورك المفضلة إلى تحفة فنية مرسومة بعناية</p>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+                <div class="gallery-item bg-neutral-900 p-2 border border-stone-800 rounded shadow-md overflow-hidden transform hover:scale-105 transition duration-300">
+                    <img src="assets/ازرعْ جميلًا ولو فِي غَيرِ مَوضِعهِ فَلا يَضيعُ جَميــلٌ أينَما زُرِعَا  A4.jpg" alt="ازرع جميلا" class="w-full h-72 object-cover rounded-sm">
+                </div>
+                <div class="gallery-item bg-neutral-900 p-2 border border-stone-800 rounded shadow-md overflow-hidden transform hover:scale-105 transition duration-300">
+                    <img src="assets/portrait-only.jpg" alt="الشخص الوحيد" class="w-full h-72 object-cover rounded-sm">
+                </div>
+                <div class="gallery-item bg-neutral-900 p-2 border border-stone-800 rounded shadow-md overflow-hidden transform hover:scale-105 transition duration-300">
+                    <img src="assets/بعض الصور ما بتكون مجرد ملامح… بتصير لحظة محفوظة خارج الزمن. كل مرة منرجعلها، بنحس بنفس الإحساس،.jpg" alt="بعض الصور" class="w-full h-72 object-cover rounded-sm">
+                </div>
+                <div class="gallery-item bg-neutral-900 p-2 border border-stone-800 rounded shadow-md overflow-hidden transform hover:scale-105 transition duration-300">
+                    <img src="assets/portrait-sheikh.jpg" alt="الشيخ عبد الحميد" class="w-full h-72 object-cover rounded-sm">
+                </div>
+                <div class="gallery-item bg-neutral-900 p-2 border border-stone-800 rounded shadow-md overflow-hidden transform hover:scale-105 transition duration-300">
+                    <img src="assets/شمسٌ أنا والشمسُ لا تنطفئ أنا اليقين أثناء الرُبماأنا مرساةُ نفسي والسفينةأنا عكاز نفسي، استقيم .jpg" alt="شمس أنا" class="w-full h-72 object-cover rounded-sm">
+                </div>
+                <div class="gallery-item bg-neutral-900 p-2 border border-stone-800 rounded shadow-md overflow-hidden transform hover:scale-105 transition duration-300">
+                    <img src="assets/portrait-story.jpg" alt="في ملامحها حكاية" class="w-full h-72 object-cover rounded-sm">
+                </div>
+                <div class="gallery-item bg-neutral-900 p-2 border border-stone-800 rounded shadow-md overflow-hidden transform hover:scale-105 transition duration-300">
+                    <img src="assets/portrait-opinion.jpg" alt="A4 رأيكم يهمني" class="w-full h-72 object-cover rounded-sm">
+                </div>
+                <div class="gallery-item bg-neutral-900 p-2 border border-stone-800 rounded shadow-md overflow-hidden transform hover:scale-105 transition duration-300">
+                    <img src="assets/Capture d’écran 2026-04-30 à 8.12.53 PM.png" alt="Portrait 8" class="w-full h-72 object-cover rounded-sm">
+                </div>
+            </div>
+
+            <button id="open-portrait-modal" class="reveal-element bg-gold text-midnight px-10 py-4 rounded-sm font-bold text-xl hover:bg-yellow-500 transition shadow-2xl tracking-wide">
+                اطلب بورتريهك الخاص الآن
+            </button>
+        </div>
+    </section>
+
+    <div id="book-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center backdrop-blur-md bg-black bg-opacity-60 p-4">
+        <div id="book-modal-content" class="bg-neutral-900 border border-stone-800 p-8 rounded-sm shadow-2xl max-w-md w-full relative">
+            <button id="close-book-modal" class="absolute top-4 left-4 text-stone-400 hover:text-gold text-2xl">✕</button>
+            <h2 id="book-form-title" class="text-2xl font-extrabold text-gold text-center mb-2">طلب الحصول على الكتاب الرقمي</h2>
+            <p id="book-form-subtitle" class="text-stone-400 text-sm text-center mb-6">يرجى ملء البيانات لتأكيد الطلب واستلام نسخة الكتاب</p>
+            <form id="book-purchase-form" class="text-right">
+                <div class="book-form-step active" id="book-step-1">
+                    <label id="lbl-book-name" class="block text-gold font-bold mb-2">الاسم الكامل / Full Name</label>
+                    <input type="text" id="book-cust-name" required class="w-full bg-stone-950 border border-stone-700 p-3 rounded-sm text-cream text-center">
+                    <div class="text-center"><button type="button" onclick="nextBookStep(2)" class="mt-6 bg-gold text-midnight px-6 py-2 font-bold hover:bg-yellow-500 transition">التالي / Next</button></div>
+                </div>
+                <div class="book-form-step hidden" id="book-step-2">
+                    <label id="lbl-book-email" class="block text-gold font-bold mb-2">البريد الإلكتروني / Email Address</label>
+                    <input type="email" id="book-cust-email" required class="w-full bg-stone-950 border border-stone-700 p-3 rounded-sm text-cream text-center" placeholder="name@email.com">
+                    <div class="flex justify-center gap-4 mt-6">
+                        <button type="button" onclick="prevBookStep(1)" class="border border-stone-600 px-6 py-2 text-stone-400 hover:text-cream">رجوع</button>
+                        <button type="button" onclick="nextBookStep(3)" class="bg-gold text-midnight px-6 py-2 font-bold hover:bg-yellow-500 transition">التالي</button>
+                    </div>
+                </div>
+                <div class="book-form-step hidden" id="book-step-3">
+                    <label id="lbl-book-contact" class="block text-gold text-sm font-bold mb-1">رقم الواتساب أو الإنستغرام</label>
+                    <input type="text" id="book-cust-contact" required class="w-full bg-stone-950 border border-stone-700 p-2 rounded-sm text-cream text-center mb-4" placeholder="@username / +000">
+                    <label id="lbl-book-country" class="block text-gold text-sm font-bold mb-1">البلد / Country</label>
+                    <input type="text" id="book-cust-country" required class="w-full bg-stone-950 border border-stone-700 p-2 rounded-sm text-cream text-center">
+                    <div class="flex justify-center gap-4 mt-6">
+                        <button type="button" onclick="prevBookStep(2)" class="border border-stone-600 px-6 py-2 text-stone-400 hover:text-cream">رجوع</button>
+                        <button type="submit" id="btn-book-submit" class="bg-gold text-midnight px-8 py-2 font-bold hover:bg-yellow-500 transition shadow-lg">تأكيد طلب الكتاب</button>
+                    </div>
+                </div>
+            </form>
+            <div id="book-success-msg" class="hidden text-center py-6">
+                <h3 id="txt-book-thanks" class="text-2xl font-bold text-gold mb-2">شكراً لطلبك</h3>
+                <p id="txt-book-callback" class="text-stone-300">تم تسجيل طلب الكتاب، سنرسل لك تفاصيل الدفع والنسخة الكاملة فوراً.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="portrait-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center backdrop-blur-md bg-black bg-opacity-60 p-4">
+        <div id="portrait-modal-content" class="bg-neutral-900 border border-stone-800 p-8 rounded-sm shadow-2xl max-w-md w-full relative">
+            <button id="close-portrait-modal" class="absolute top-4 left-4 text-stone-400 hover:text-gold text-2xl">✕</button>
+            <h2 id="port-sec-title" class="text-2xl font-extrabold text-gold text-center mb-2">طلب رسم بورتريه خاص</h2>
+            <p id="port-sec-subtitle" class="text-stone-400 text-sm text-center mb-6">حول صورك المفضلة إلى تحفة فنية مرسومة بعناية</p>
+            <form id="portrait-form" class="text-right">
+                <div class="form-step active" id="step-1">
+                    <label id="lbl-name" class="block text-gold font-bold mb-2">الاسم الكامل / Full Name</label>
+                    <input type="text" id="cust-name" required class="w-full bg-stone-950 border border-stone-700 p-3 rounded-sm text-cream text-center">
+                    <div class="text-center"><button type="button" onclick="nextStep(2)" class="mt-6 bg-gold text-midnight px-6 py-2 font-bold hover:bg-yellow-500 transition">التالي / Next</button></div>
+                </div>
+                <div class="form-step hidden" id="step-2">
+                    <label id="lbl-contact" class="block text-gold font-bold mb-2">رقم الهاتف أو حساب الإنستغرام</label>
+                    <input type="text" id="cust-contact" required class="w-full bg-stone-950 border border-stone-700 p-3 rounded-sm text-cream text-center" placeholder="@username / +000">
+                    <div class="flex justify-center gap-4 mt-6">
+                        <button type="button" onclick="prevStep(1)" class="border border-stone-600 px-6 py-2 text-stone-400 hover:text-cream">رجوع</button>
+                        <button type="button" onclick="nextStep(3)" class="bg-gold text-midnight px-6 py-2 font-bold hover:bg-yellow-500 transition">التالي</button>
+                    </div>
+                </div>
+                <div class="form-step hidden" id="step-3">
+                    <label id="lbl-country" class="block text-gold text-sm font-bold mb-1">البلد / Country</label>
+                    <input type="text" id="cust-country" required class="w-full bg-stone-950 border border-stone-700 p-2 rounded-sm text-cream text-center mb-4">
+                    <label id="lbl-date" class="block text-gold text-sm font-bold mb-1">تاريخ الحاجة للوحة / Required Date</label>
+                    <input type="date" id="cust-date" required class="w-full bg-stone-950 border border-stone-700 p-2 rounded-sm text-cream text-center">
+                    <div class="flex justify-center gap-4 mt-6">
+                        <button type="button" onclick="prevStep(2)" class="border border-stone-600 px-6 py-2 text-stone-400 hover:text-cream">رجوع</button>
+                        <button type="submit" id="btn-submit" class="bg-gold text-midnight px-8 py-2 font-bold hover:bg-yellow-500 transition shadow-lg">إرسال الطلب</button>
+                    </div>
+                </div>
+            </form>
+            <div id="success-msg" class="hidden text-center py-6">
+                <h3 id="txt-thanks" class="text-2xl font-bold text-gold mb-2">شكراً لثقتك بفننا</h3>
+                <p id="txt-callback" class="text-stone-300">لقد تم تسجيل طلبك بنجاح، سوف نتصل بك لاحقاً.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
