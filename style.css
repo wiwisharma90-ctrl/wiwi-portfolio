@@ -115,7 +115,7 @@ html[dir="ltr"] .text-left { text-align: right; }
   
   /* اجعلي الصور تأخذ عرض الشاشة بالكامل */
   img {
-    width: 100% !important;
+    width: 60% !important;
     height: auto !important;
   }
 
@@ -126,7 +126,7 @@ html[dir="ltr"] .text-left { text-align: right; }
 }
 /* هذا الكود يجعل أي صورة داخل الموقع لا تتجاوز عرض شاشة الجوال */
 img {
-    max-width: 100%;
+    max-width: 60%;
     height: auto;
     display: block;
     margin: 0 auto; /* هذا يجعل الصورة في المنتصف */
