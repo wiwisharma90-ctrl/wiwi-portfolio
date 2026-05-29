@@ -1,0 +1,108 @@
+/* تعريف الألوان المخصصة الفخمة */
+:root {
+    --color-midnight: #060b14; /* أزرق غامق جداً فخم قاصد للون الصحراء في الليل */
+    --color-gold: #d4af37;     /* لون ذهبي ملكي تفاعلي */
+    --color-cream: #f4efe2;    /* لون كريمي مريح للقراءة */
+}
+
+.bg-midnight { background-color: var(--color-midnight); }
+.text-gold { color: var(--color-gold); }
+.border-gold { border-color: var(--color-gold); }
+.text-cream { color: var(--color-cream); }
+
+/* تأثير الضوء المسلط (Spotlight) الساقط على اللوحة خلفية قوية جداً */
+.spotlight {
+    position: absolute;
+    top: -10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60vw;
+    height: 80vh;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, rgba(6, 11, 20, 0) 70%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* عمق الأبعاد الثلاثية للإطار (3D Perspective) */
+.perspective-container {
+    perspective: 1000px;
+}
+
+/* تأثير الظل القوي والعميق للإطار لتبدو اللوحة معلقة وحقيقية */
+.art-shadow {
+    box-shadow: 0px 30px 60px rgba(0, 0, 0, 0.8), 
+                0px 4px 20px rgba(212, 175, 55, 0.1);
+}
+
+/* إعدادات تبديل الاتجاهات للغات (عربي/إنجليزي) */
+html[dir="rtl"] .text-right { text-align: right; }
+html[dir="rtl"] .text-left { text-align: left; }
+html[dir="ltr"] .text-right { text-align: left; }
+html[dir="ltr"] .text-left { text-align: right; }
+
+/* إعدادات حاوي الكتاب ثلاثي الأبعاد */
+.book-container {
+    width: 300px;
+    height: 400px;
+    position: relative;
+    perspective: 1500px;
+}
+
+.book {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+}
+
+/* التنسيق المشترك لجميع الصفحات */
+.page {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: left center;
+    transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    user-select: none;
+    cursor: pointer;
+    box-shadow: 5px 5px 20px rgba(0,0,0,0.5);
+}
+
+/* تمييز الصفحات الداخلية عن الأغلفة */
+.page-inside {
+    background-color: #f7f5f0;
+    border-left: 3px solid #ddd;
+}
+
+/* عند الضغط على الصفحة يتم قلبها لليسار كأنها تُفتح */
+.page.flipped {
+    transform: rotateY(-160deg);
+    box-shadow: -5px 5px 20px rgba(0,0,0,0.5);
+}
+
+/* ترتيب ظهور الصفحات فوق بعضها بشكل صحيح (محدث لـ 5 صفحات) */
+.cover-front { z-index: 5; }
+.page-inside:nth-child(2) { z-index: 4; }
+.page-inside:nth-child(3) { z-index: 3; }
+.page-inside:nth-child(4) { z-index: 2; }
+.cover-back { z-index: 1; transform: rotateY(0deg); }
+
+/* إعدادات خطوات الفورم */
+.form-step {
+    transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+    width: 100%;
+}
+.form-step.hidden {
+    display: none;
+    opacity: 0;
+    transform: scale(0.95);
+}
+.form-step.active {
+    display: block;
+    opacity: 1;
+    transform: scale(1);
+}
