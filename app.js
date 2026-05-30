@@ -222,7 +222,6 @@ document.getElementById("portrait-form").addEventListener("submit", async functi
                 'Content-Type': 'application/json',
                 'Prefer': 'return=representation'
             },
-            // متطابق 100% مع أعمدة جدول portrait_orders (name, contact, country, required_date, status)
             body: JSON.stringify({
                 name: custName,
                 contact: custContact,
@@ -261,7 +260,6 @@ document.getElementById("book-purchase-form").addEventListener("submit", async f
                 'Content-Type': 'application/json',
                 'Prefer': 'return=representation'
             },
-            // متطابق 100% مع أعمدة جدول book_orders (name, email, contact, country)
             body: JSON.stringify({
                 name: bookCustName,
                 email: bookCustEmail,
@@ -283,21 +281,45 @@ document.getElementById("book-purchase-form").addEventListener("submit", async f
 });
 
 
-// (7) قاموس الترجمات الموسّع للموقع بالكامل
+// (7) قاموس الترجمات الموسّع للموقع بالكامل (تم إضافة ترجمة قسم الفنانة والنافذة هنا)
 const translations = {
     ar: {
         bookSecTitle: "كتابي الرقمي", bookSecSubtitle: "تصفح الفصول الأولى مجاناً وعش التجربة قبل الشراء",
         bookTitle: "اسم الكتاب الفخم", bookPages: "📄 180 صفحة من الإلهام", bookDesc: "هذا الكتاب يأخذك في رحلة عميقة وراء الكواليس، حيث يمتزج الفن بالقصص.",
         downloadBtn: "قراءة النسخة التجريبية (PDF)", buyBtn: "شراء الكتاب الكامل",
         galleryTitle: "معرض لوحات البورتريه الخاص بي", gallerySubtitle: "حول صورك المفضلة إلى تحفة فنية مرسومة بعناية",
-        openPortBtn: "اطلب بورتريهك الخاص الآن"
+        openPortBtn: "اطلب بورتريهك الخاص الآن",
+        
+        // إضافات قسم الفنانة باللغة العربية
+        aboutTitle: "وراء الفرشاة والخطوط",
+        aboutSubtitle: "حيث يلتقي منطق الرياضيات بسحر الفن الواقعي",
+        aboutShortDesc: '"أنا بلقيس بيداري (ويوي شارما)، طالبة رياضيات في الجامعة وفنانة بورتريه واقعي. لطالما آمنت أن الفن ليس مجرد نقل للملامح، بل هو التقاط للروح اللحظية المحفوظة خارج حدود الزمن. الرياضيات علمتني الهدوء الفكري، وأن لكل مشكلة حل؛ فبدل التسرع، أتعامل مع لوحاتي وقياساتي بدقة هندسية وصبر لا ينفد."',
+        aboutBtn: "اكتشف قصة الفنانة وسيرتها الفنية كاملة 📜",
+        storyModalTitle: "القصة الكاملة والسيرة الفنية",
+        storySection1Title: "📜 كيف بدأت الحكاية؟",
+        storySection1Body: "بدأت رحلتي مع الرسم منذ طفولتي المبكرة، ولكن عند بلوغي الحادية عشرة من عمري، توقفت الفرشاة عن الحركة تماماً. مرت السنوات حتى وصلت لعمر الرابعة عشرة، حينما أعلنت المدرسة عن مسابقة رسم. هنا تدخل أصدقائي وألحّوا عليّ للمشاركة لعلمهم القديم بمهارتي. ورغم أنني لم أفز بتلك المسابقة، إلا أنها أشعلت الشرارة النائمة بداخلي مجدداً. عدت من بعدها بشغف مضاعف، وبدأت ألتهم تقنيات رسم الوجوه وأتحدى نفسي يوماً بعد يوم، حتى وصلت لدرجة من الواقعية تجعل من الصعب التمييز بين اللوحة والصورة الحقيقية.",
+        storySection2Title: "📐 فلسفة الرياضيات والفن",
+        storySection2Body: "كطالبة في تخصص الرياضيات بجامعة باجي مختار، أجد أن هذا العلم الأكاديمي الصارم قد صقل طريقتي الفنية بشكل غير مباشر. الرياضيات علمتني العقلانية التامة والهدوء؛ علمتني أن لكل مشكلة حتماً حل. عندما أواجه تعقيداً في أبعاد البورتريه، بدل أن أغضب أو أمزق الورقة، أتوقف، وأراجع قياساتي الرياضية بهدوء لأجد الخلل وأصلحه. الفن بالنسبة لي هو دمج بين انضباط العقل وعاطفة الروح. لوحتي 'سيادة الألم' تختزل فلسفتي الشخصية، فهي تجسد قدرة المرأة اللامتناهية على تحمل الوجع والوقوف في وجهه بكل شموخ، محولةً كل ندبة إلى نور خاص بها.",
+        storySection3Title: "💼 الخبرات المهنية والإنجازات (CV)"
     },
     en: {
         bookSecTitle: "My Digital Book", bookSecSubtitle: "Browse the first chapters for free and live the experience",
         bookTitle: "The Luxurious Book Name", bookPages: "📄 180 Pages of Inspiration", bookDesc: "This book takes you on a deep journey behind the scenes, where art blends with stories.",
         downloadBtn: "Read Sample Version (PDF)", buyBtn: "Buy Full Book",
         galleryTitle: "My Custom Portrait Gallery", gallerySubtitle: "Turn your favorite pictures into a carefully crafted masterpiece",
-        openPortBtn: "Order Your Custom Portrait Now"
+        openPortBtn: "Order Your Custom Portrait Now",
+        
+        // إضافات قسم الفنانة باللغة الإنجليزية
+        aboutTitle: "Behind the Brush & Lines",
+        aboutSubtitle: "Where Mathematical Logic Meets the Magic of Realism",
+        aboutShortDesc: '"I am Belkais Bidari (Wiwi Sharma), a university mathematics student and a realistic portrait artist. I have always believed that art is not just about copying features, but rather capturing the momentary soul preserved outside the boundaries of time. Mathematics taught me intellectual calmness and that every problem has a solution; instead of rushing, I deal with my paintings and measurements with geometric precision and endless patience."',
+        aboutBtn: "Discover the Artist's Story & Full CV 📜",
+        storyModalTitle: "Full Story & Artistic Biography",
+        storySection1Title: "📜 How Did the Story Begin?",
+        storySection1Body: "My journey with drawing began in my early childhood, but when I reached eleven years old, the brush stopped moving completely. Years passed until I turned fourteen, when the school announced a drawing competition. Here my friends stepped in and urged me to participate, knowing my talent. Although I did not win that competition, it reignited the sleeping spark within me. I came back with a double passion, and began to devour portrait techniques and challenge myself day after day, until I reached a degree of realism that makes it difficult to distinguish between the drawing and the real photograph.",
+        storySection2Title: "📐 Philosophy of Mathematics & Art",
+        storySection2Body: "As a mathematics student at Badji Mokhtar University, I find that this rigorous academic science has shaped my artistic approach indirectly. Mathematics taught me utter rationality and calmness; it taught me that every problem definitely has a solution. When I face a complexity in the dimensions of a portrait, instead of getting angry or tearing up the paper, I stop and review my mathematical measurements calmly to find the flaw and fix it. For me, art is a fusion of mental discipline and soul emotion. My painting 'The Sovereignty of Pain' encapsulates my personal philosophy, embodying a woman's infinite capacity to endure pain and stand tall in the face of it, turning every scar into her own light.",
+        storySection3Title: "💼 Professional Experience & Achievements (CV)"
     }
 };
 
@@ -323,7 +345,50 @@ document.getElementById("lang-btn").addEventListener("click", () => {
     document.getElementById("gallery-title").innerText = t.galleryTitle;
     document.getElementById("gallery-subtitle").innerText = t.gallerySubtitle;
     document.getElementById("open-portrait-modal").innerText = t.openPortBtn;
+
+    // تفعيل التبديل الفوري لنصوص قسم الفنانة والـ Modal عند الضغط على الزر
+    const aboutHeader = document.querySelector("#about-artist h2");
+    const aboutSub = document.querySelector("#about-artist p");
+    const aboutDescDiv = document.querySelector("#about-artist .max-w-2xl");
+    const storyModalHeader = document.querySelector("#story-modal h2");
+    
+    if (aboutHeader) aboutHeader.innerText = t.aboutTitle;
+    if (aboutSub) aboutSub.innerText = t.aboutSubtitle;
+    if (aboutDescDiv) aboutDescDiv.innerHTML = t.aboutShortDesc;
+    if (openStoryBtn) openStoryBtn.innerText = t.aboutBtn;
+    if (storyModalHeader) storyModalHeader.innerText = t.storyModalTitle;
+
+    // تبديل عناوين فقرات الـ Modal الداخلي بالتوالي وبدقة
+    const titles = document.querySelectorAll("#story-modal h3");
+    const paragraphs = document.querySelectorAll("#story-modal p");
+    
+    if (titles.length >= 2) {
+        titles[0].innerText = t.storySection1Title;
+        titles[1].innerText = t.storySection2Title;
+        titles[2].innerText = t.storySection3Title;
+    }
+    if (paragraphs.length >= 2) {
+        paragraphs[1].innerText = t.storySection1Body; // الفقرة الأولى للقصة داخل المودال
+        paragraphs[2].innerText = t.storySection2Body; // الفقرة الثانية للفلسفة داخل المودال
+    }
+    
+    // ترجمة نقاط الـ CV الإنجليزية والعربية مع الحفاظ على الـ Tag الـ فخم (text-cream) بداخلها
+    const cvLines = document.querySelectorAll("#story-modal ul li");
+    if (cvLines.length >= 4) {
+        if (currentLang === "en") {
+            cvLines[0].innerHTML = `<span class='text-cream font-semibold'>Portrait Drawing Teacher (2021 - Present):</span> Providing intensive training programs for beginners to teach shading basics and dimensions.`;
+            cvLines[1].innerHTML = `<span class='text-cream font-semibold'>Freelance Portrait Artist:</span> Completed over 150 custom realistic portrait paintings for clients worldwide.`;
+            cvLines[2].innerHTML = `<span class='text-cream font-semibold'>Content Creator & Author:</span> Managing an art community of over 11k followers on Instagram, and published my own educational book to help artists maintain their passion and build daily drawing habits.`;
+            cvLines[3].innerHTML = `<span class='text-cream font-semibold'>Art Exhibitions:</span> Participated in 6 group exhibitions and held 4 solo exhibitions to display my realistic artwork.`;
+        } else {
+            cvLines[0].innerHTML = `<span class='text-cream font-semibold'>مدرسة رسم بورتريه بالرصاص (منذ 2021 - حتى الآن):</span> تقديم برامج تدريبية ومكثفة للمبتدئين لتعليم أساسيات التظليل والأبعاد.`;
+            cvLines[1].innerHTML = `<span class='text-cream font-semibold'>فنانة بورتريه مستقلة:</span> إنجاز أكثر من 150 لوحة بورتريه واقعية مخصصة لزبائن من مختلف الأماكن.`;
+            cvLines[2].innerHTML = `<span class='text-cream font-semibold'>صانعة محتوى ومؤلفة:</span> أدير مجتمعاً فنياً يضم أكثر من 11 ألف متابع على إنستغرام، وقمت بتأليف ونشر كتابي التعليمي الخاص لمساعدة الرسامين في الحفاظ على شغفهم وبناء عادتهم اليومية.`;
+            cvLines[3].innerHTML = `<span class='text-cream font-semibold'>المعارض الفنية:</span> شاركت في 6 معارض فنية جماعية، وأقمت 4 معارض فردية خاصة لعرض أعمالي الواقعية.`;
+        }
+    }
 });
+
 // البرمجة الخاصة بفتح وإغلاق نافذة قصة الفنانة (Story Modal)
 const storyModal = document.getElementById('story-modal');
 const openStoryBtn = document.getElementById('open-story-modal');
