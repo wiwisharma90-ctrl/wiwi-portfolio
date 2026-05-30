@@ -324,3 +324,30 @@ document.getElementById("lang-btn").addEventListener("click", () => {
     document.getElementById("gallery-subtitle").innerText = t.gallerySubtitle;
     document.getElementById("open-portrait-modal").innerText = t.openPortBtn;
 });
+// البرمجة الخاصة بفتح وإغلاق نافذة قصة الفنانة (Story Modal)
+const storyModal = document.getElementById('story-modal');
+const openStoryBtn = document.getElementById('open-story-modal');
+const closeStoryBtn = document.getElementById('close-story-modal');
+
+if (openStoryBtn && storyModal && closeStoryBtn) {
+    // فتح النافذة عند الضغط على الزر
+    openStoryBtn.addEventListener('click', () => {
+        storyModal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden'; // منع سكرول الموقع الخلفي
+    });
+
+    // إغلاق النافذة عند الضغط على علامة X
+    closeStoryBtn.addEventListener('click', () => {
+        storyModal.classList.add('hidden');
+        document.body.style.overflow = 'auto'; // إعادة السكرول الطبيعي
+    });
+
+    // إغلاق النافذة إذا ضغط المستخدم في أي مكان خارج الإطار الأسود
+    storyModal.addEventListener('click', (e) => {
+        if (e.target === storyModal) {
+            storyModal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+    });
+}
+
