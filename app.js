@@ -350,4 +350,3 @@ if (openStoryBtn && storyModal && closeStoryBtn) {
         }
     });
 }
-
