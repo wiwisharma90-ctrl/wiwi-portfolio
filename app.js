@@ -29,7 +29,7 @@ const artworks = [
         title_ar: "لوحة نَذْر", 
         title_en: "The Vow", 
         hours: "22",
-        desc_ar: "وجه هادئ يحمل عهدًا لا يُقال. في عينيها يقظة من عرف الثمن، وفي ملامحها صمت من اختار أن يواجه ظلّه بدل أن يهرب منه. هي ليست حكاية سقوط… بل حكاية قوّة وُولدت من العتمة، وصارت جزءًا منها دون أن تنتمي إليها.",
+        desc_ar: "وجه هادئ يحمل عهدًا لا يُقال. في عينيها يقظة من عرف الثمن، وفي ملامحها صمت من اختار أن يواجه ظلّه بدل أن يهرب منه. هي ليست حكاية سقوط… بل حكاية قوّة وُلدت من العتمة، وصارت جزءًا منها دون أن تنتمي إليها.",
         desc_en: "A quiet face carrying an unspoken vow. In her eyes lives the awareness of someone who knows the cost, and in her silence, the strength of one who chose to face her shadow instead of running from it. This is not a story of falling but of power born from darkness.",
         image: "https://i.postimg.cc/pTC1zSJM/Capture-d-e-cran-2026-04-30-a-8-12-45-PM.png"
     },
@@ -303,7 +303,7 @@ const translations = {
         storySection1Title: "📜 كيف بدأت الحكاية؟",
         storySection1Body: "بدأت رحلتي مع الرسم منذ طفولتي المبكرة، ولكن عند بلوغي الحادية عشرة من عمري، توقفت الفرشاة عن الحركة تماماً. مرت السنوات حتى وصلت لعمر الرابعة عشرة، حينما أعلنت المدرسة عن مسابقة رسم. هنا تدخل أصدقائي وألحّوا عليّ للمشاركة لعلمهم القديم بمهارتي. ورغم أنني لم أفز بتلك المسابقة، إلا أنها أشعلت الشرارة النائمة بداخلي مجدداً. عدت من بعدها بشغف مضاعف، وبدأت ألتهم تقنيات رسم الوجوه وأتحدى نفسي يوماً بعد يوم، حتى وصلت لدرجة من الواقعية تجعل من الصعب التمييز بين اللوحة والصورة الحقيقية.",
         storySection2Title: "📐 فلسفة الرياضيات والفن",
-        storySection2Body: "كطالبة في تخصص الرياضيات بجامعة باجي مختار، أجد أن هذا العلم الأكاديمي الصارم قد صقل طريقتي الفنية بشكل غير مباشر. الرياضيات علمتني العقلانية التامة والهدوء؛ علمتني أن لكل مشكلة حتماً حل. عندما أواجه تعقيداً في أبعاد البورتريه، بدل أن أغضب أو أمزق الورقة، أتوقف، وأراجع قياساتي الرياضية بهدوء لأجد الخلل وأصلحه. الفن بالنسبة لي هو دمج بين انضباط العقل وعاطفة الروح. لوحتي 'سيادة الألم' تختزل فلسفتي الشخصية، فهي تجسد قدرة المرأة اللامتناهية على تحمل الوجع والوقوف في وجهه بكل شموخ، محولةً كل ندبة إلى نور خاص بها.",
+        storySection2Body: "كطالبة في تخصص الرياضيات بجامعة باجي مختار، أجد أن هذا العلم الأكاديمي الصارم قد صقل طريقتي الفنية بشكل غير مباشر. الرياضيات علمتني العقلانية التامة والهدوء؛ علمتني أن لكل مشكلة حتماً حل. عندما أواجه تعقيداً في أبعاد البورتريه, بدل أن أغضب أو أمزق الورقة، أتوقف، وأراجع قياساتي الرياضية بهدوء لأجد الخلل وأصلحه. الفن بالنسبة لي هو دمج بين انضباط العقل وعاطفة الروح. لوحتي 'سيادة الألم' تختزل فلسفتي الشخصية، فهي تجسد قدرة المرأة اللامتناهية على تحمل الوجع والوقوف في وجهه بكل شموخ، محولةً كل ندبة إلى نور خاص بها.",
         storySection3Title: "💼 الخبرات المهنية والإنجازات (CV)",
         
         // قسم معرض البورتريهات
@@ -351,9 +351,9 @@ document.getElementById("lang-btn").addEventListener("click", () => {
 
     const t = translations[currentLang];
     
-    // 1. ترجمة شريط المهام (Navbar Links) مباشرة ومضمونة عن طريق نصوصها ومكانها
+    // 1. ترجمة شريط المهام (Navbar Links)
     const navLinks = document.querySelectorAll("nav a");
-    if(navLinks.length >= 3) {
+    if(navLinks.length >= 4) {
         navLinks[0].innerText = t.navMuseum;
         navLinks[1].innerText = t.navBook;
         navLinks[2].innerText = t.navArtist;
@@ -368,11 +368,10 @@ document.getElementById("lang-btn").addEventListener("click", () => {
     document.getElementById("book-desc").innerText = t.bookDesc;
     document.getElementById("download-sample-btn").innerText = t.downloadBtn;
     
-    // ترجمة زر شراء الكتاب الكامل بدقة (باستهداف الـ ID الأصلي من الـ HTML)
     const buyBookButton = document.getElementById("open-book-modal");
     if (buyBookButton) buyBookButton.innerText = t.buyBtn;
     
-    // 3. ترجمة قسم الفنانة الجديد (عني) باستهداف العناصر مباشرة لضمان التغيير
+    // 3. ترجمة قسم الفنانة الجديد (عني)
     const aboutHeader = document.querySelector("#about-artist h2");
     const aboutSub = document.querySelector("#about-artist p");
     const aboutDescDiv = document.querySelector("#about-artist .max-w-2xl");
@@ -383,7 +382,7 @@ document.getElementById("lang-btn").addEventListener("click", () => {
     if (aboutDescDiv) aboutDescDiv.innerHTML = t.aboutShortDesc;
     if (openStoryBtn) openStoryBtn.innerText = t.aboutBtn;
 
-    // 4. ترجمة النافذة المنبثقة للقصة (Story Modal) بالكامل
+    // 4. ترجمة النافذة المنبثقة للقصة (Story Modal) بالكامل واستهداف الفقرات بشكل صحيح ومضمون
     const storyModalHeader = document.querySelector("#story-modal h2");
     if (storyModalHeader) storyModalHeader.innerText = t.storyModalTitle;
 
@@ -395,9 +394,14 @@ document.getElementById("lang-btn").addEventListener("click", () => {
         titles[1].innerText = t.storySection2Title;
         titles[2].innerText = t.storySection3Title;
     }
-    if (paragraphs.length >= 3) {
-        paragraphs[1].innerText = t.storySection1Body; 
-        paragraphs[2].innerText = t.storySection2Body; 
+    
+    // التعديل الجوهري هنا: استهداف الفقرة الثانية والثالثة مباشرة بدقة لمنع بقائهما بالعربية
+    if (paragraphs.length >= 4) {
+        paragraphs[2].innerText = t.storySection1Body; // فقرة: كيف بدأت الحكاية
+        paragraphs[3].innerText = t.storySection2Body; // فقرة: فلسفة الرياضيات والفن
+    } else if (paragraphs.length === 3) {
+        paragraphs[1].innerText = t.storySection1Body;
+        paragraphs[2].innerText = t.storySection2Body;
     }
     
     // ترجمة نقاط الـ CV بداخل المودال
@@ -416,7 +420,7 @@ document.getElementById("lang-btn").addEventListener("click", () => {
         }
     }
 
-    // 5. ترجمة معرض لوحات البورتريه وعناوينها والزر الخاص بها
+    // 5. ترجمة معرض لوحات البورتريه
     document.getElementById("gallery-title").innerText = t.galleryTitle;
     document.getElementById("gallery-subtitle").innerText = t.gallerySubtitle;
     document.getElementById("open-portrait-modal").innerText = t.openPortBtn;
