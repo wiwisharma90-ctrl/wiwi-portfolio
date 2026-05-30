@@ -7,8 +7,27 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <style>
+        .text-gold { color: #d4af37; }
+        .border-gold { border-color: #d4af37; }
+        .bg-gold { background-color: #d4af37; }
+        /* توهج النيون للأيقونات */
+        .icon-glow {
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+            transition: all 0.4s ease;
+        }
+        .icon-glow:hover {
+            color: #fff;
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.9), 0 0 30px rgba(212, 175, 55, 0.6);
+            transform: translateY(-5px);
+        }
+        /* تخصيص السكرول بار الداخلي للنافذة المنبثقة */
+        .custom-scroll::-webkit-scrollbar { width: 5px; }
+        .custom-scroll::-webkit-scrollbar-track { background: #171717; }
+        .custom-scroll::-webkit-scrollbar-thumb { background: #d4af37; border-radius: 2px; }
+    </style>
 </head>
 <body class="bg-midnight text-cream font-sans overflow-x-hidden">
 
@@ -17,8 +36,8 @@
         <div class="flex items-center gap-6">
             <a href="#portfolio" class="hover:text-gold transition">المتحف</a>
             <a href="#book" class="hover:text-gold transition">الكتاب</a>
+            <a href="#about-artist" class="hover:text-gold transition">الفنانة</a>
             <a href="#portrait-gallery" class="hover:text-gold transition">البورتريهات</a>
-            <button id="lang-btn" class="border border-gold px-4 py-1 rounded hover:bg-gold hover:text-midnight transition">EN</button>
         </div>
     </nav>
 
@@ -31,7 +50,7 @@
             </div>
             <div class="w-full md:w-2/5 flex justify-center order-1 md:order-2 perspective-container reveal-element">
                 <div id="art-frame" class="art-shadow bg-neutral-900 p-4 border-4 border-stone-800 rounded-sm transform transition duration-500 hover:scale-105">
-                    <img id="art-image" src="https://i.postimg.cc/fLCgmPfh/Capture-d-e-cran-2026-04-30-a-8-12-23-PM.png" alt="Artwork" class="w-72 h-96 object-cover">
+                    <img id="art-image" src="assets/Capture d’écran 2026-04-30 à 8.12.23 PM.png" alt="Artwork" class="w-72 h-96 object-cover">
                 </div>
             </div>
             <div id="art-desc-container" class="w-full md:w-1/4 text-left order-3 my-6 md:my-0 reveal-element">
@@ -48,13 +67,13 @@
         <div class="spotlight"></div>
         <div class="container mx-auto px-4 text-center z-10 max-w-5xl">
             <h2 id="book-section-title" class="text-4xl font-extrabold text-gold mb-4 reveal-element">كتابي الرقمي</h2>
-            <p id="book-section-subtitle" class="text-stone-400 mb-12 max-w-xl mx-auto reveal-element"> تصفح الفصول الأولى مجاناً وعش التجربة قبل الشراء password: shawarma</p>
+            <p id="book-section-subtitle" class="text-stone-400 mb-12 max-w-xl mx-auto reveal-element">تصفح الفصول الأولى مجاناً وعش التجربة قبل الشراء</p>
             <div class="flex flex-col lg:flex-row items-center justify-around gap-12 mt-6">
                 <div class="w-full lg:w-1/3 text-right order-2 lg:order-1 px-6 reveal-element">
-                    <h3 id="book-title" class="text-3xl font-bold text-cream mb-2">كتاب كن رسّامًا</h3>
-                    <p id="book-pages-count" class="text-gold text-sm mb-4">📄 180 صفحة من الإلهام</p>
+                    <h3 id="book-title" class="text-3xl font-bold text-cream mb-2">دليل رسم البورتريه بالرصاص</h3>
+                    <p id="book-pages-count" class="text-gold text-sm mb-4">📄 180 صفحة من الإلهام والتوجيه</p>
                     <p id="book-desc" class="text-stone-300 leading-relaxed mb-6 text-justify">
-                        هذا الكتاب يأخذك في رحلة عميقة وراء الكواليس، حيث يمتزج الفن بالقصص، ويكشف لك أسرار بناء الهوية البصرية من الصفر.
+                        كتاب منهجي صممته خصيصاً لأكون الطريق الصحيح الذي تمنيت وجوده عندما كنت مبتدئة. يختصر عليك الوقت، ويحميك من ضياع الشغف، مع فصل كامل مخصص لبناء عادة الرسم اليومية والحفاظ على الإلهام المستمر.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 justify-start">
                         <a href="https://drive.google.com/file/d/1UNjCsFYC5wsTdztYiyhE0hSvbodb-GwP/view?fbclid=PAdGRleASGk3xleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAadunlpl6skHxGbxDbqhucSNWvFt9B41taeVndBeZalGv8q_kCJa2ipAipzAFw_aem_OlnZ9N8A6wTRyLfQjJpyoQ&pli=1" target="_blank" id="download-sample-btn" class="border border-gold text-gold px-6 py-3 rounded-sm hover:bg-gold hover:text-midnight transition font-bold text-center">
@@ -69,19 +88,19 @@
                     <div class="book-container">
                         <div class="book">
                             <div class="page cover-front bg-stone-900 border-2 border-gold">
-                                <img src="https://i.postimg.cc/mDj6CnyP/Capture-d-e-cran-2026-05-29-a-4-21-24-PM.png" alt="الغلاف الأمامي" class="w-full h-full object-cover">
+                                <img src="assets/Capture d’écran 2026-05-29 à 4.21.24 PM.png" alt="الغلاف الأمامي" class="w-full h-full object-cover">
                             </div>
                             <div class="page page-inside">
-                                <img src="https://i.postimg.cc/ZRHDpQxb/Capture-d-e-cran-2026-05-29-a-4-20-35-PM.png" alt="صفحة 1" class="w-full h-full object-cover">
+                                <img src="assets/Capture d’écran 2026-05-29 à 4.20.35 PM.png" alt="صفحة 1" class="w-full h-full object-cover">
                             </div>
                             <div class="page page-inside">
-                                <img src="https://i.postimg.cc/5NzQzQzQ/Capture-d-e-cran-2026-05-29-a-4-21-09-PM.png" alt="صفحة 2" class="w-full h-full object-cover">
+                                <img src="assets/Capture d’écran 2026-05-29 à 4.20.47 PM.png" alt="صفحة 2" class="w-full h-full object-cover">
                             </div>
                             <div class="page page-inside">
-                                <img src="https://i.postimg.cc/hjs3TY1v/Capture-d-e-cran-2026-05-29-a-4-20-58-PM.png" alt="صفحة 3" class="w-full h-full object-cover">
+                                <img src="assets/Capture d’écran 2026-05-29 à 4.20.58 PM.png" alt="صفحة 3" class="w-full h-full object-cover">
                             </div>
                             <div class="page cover-back bg-stone-900 border-2 border-gold">
-                                <img src="https://i.postimg.cc/pTC1zSJp/Capture-d-e-cran-2026-05-29-a-4-21-09-PM.png" alt="الغلاف الخلفي" class="w-full h-full object-cover">
+                                <img src="assets/Capture d’écran 2026-05-29 à 4.21.09 PM.png" alt="الغلاف الخلفي" class="w-full h-full object-cover">
                             </div>
                         </div>
                     </div>
@@ -90,36 +109,50 @@
         </div>
     </section>
 
-    <section id="portrait-gallery" class="relative min-h-screen w-full bg-midnight py-24 overflow-hidden">
+    <section id="about-artist" class="relative py-24 bg-stone-950/60 border-t border-b border-stone-900 overflow-hidden">
+        <div class="spotlight"></div>
+        <div class="container mx-auto px-4 max-w-4xl text-center z-10 relative">
+            <h2 class="text-4xl font-extrabold text-gold mb-3 reveal-element">وراء الفرشاة والخطوط</h2>
+            <p class="text-stone-400 mb-8 reveal-element">حيث يلتقي منطق الرياضيات بسحر الفن الواقعي</p>
+            <div class="max-w-2xl mx-auto text-stone-300 leading-relaxed text-lg text-justify mb-8 reveal-element">
+                "أنا بلـقيس بيـداري (ويـوي شـارما)، طالبة رياضيات في الجامعة وفنانة بورتريه واقعي. لطالما آمنت أن الفن ليس مجرد نقل للملامح، بل هو التقاط للروح اللحظية المحفوظة خارج حدود الزمن. الرياضيات علمتني الهدوء الفكري، وأن لكل مشكلة حل؛ فبدل التسرع، أتعامل مع لوحاتي وقياساتي بدقة هندسية وصبر لا ينفد."
+            </div>
+            <button id="open-story-modal" class="reveal-element border-2 border-gold text-gold font-bold px-8 py-3 rounded-sm hover:bg-gold hover:text-midnight transition shadow-lg">
+                اكتشف قصة الفنانة وسيرتها الفنية كاملة 📜
+            </button>
+        </div>
+    </section>
+
+    <section id="portrait-gallery" class="relative min-h-screen w-full bg-midnight py-16 overflow-hidden">
         <div class="spotlight"></div>
         <div class="container mx-auto px-4 z-10 max-w-6xl text-center">
             <h2 id="gallery-title" class="text-4xl font-extrabold text-gold mb-2 reveal-element">معرض لوحات البورتريه الخاص بي</h2>
-            <p id="gallery-subtitle" class="text-stone-400 mb-12 reveal-element">حول صورك المفضلة إلى تحفة فنية مرسومة بعناية</p>
+            <p id="gallery-subtitle" class="text-stone-400 mb-6 reveal-element">حول صورك المفضلة إلى تحفة فنية مرسومة بعناية</p>
             
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mb-10">
                 <div class="gallery-item bg-neutral-900 p-2 border border-stone-800 rounded shadow-md overflow-hidden transform hover:scale-105 transition duration-300">
-                    <img src="https://i.postimg.cc/yxNpPTLy/azrʿ-jmyl-a-wlw-f-y-gh-yr-m-wd-ʿh-f-la-y-dyʿ-j-myl-a-yn-ma-z-r-ʿ-a-A4.jpg" alt="ازرع جميلا" class="w-full h-72 object-cover rounded-sm">
+                    <img src="assets/ازرعْ جميلًا ولو فِي غَيرِ مَوضِعهِ فَلا يَضيعُ جَميــلٌ أينَما زُرِعَا  A4.jpg" alt="ازرع جميلا" class="w-full h-72 object-cover rounded-sm">
                 </div>
                 <div class="gallery-item bg-neutral-900 p-2 border border-stone-800 rounded shadow-md overflow-hidden transform hover:scale-105 transition duration-300">
-                    <img src="https://i.postimg.cc/rspZJ9fr/portrait-sheikh.jpg" alt="الشخص الوحيد" class="w-full h-72 object-cover rounded-sm">
+                    <img src="assets/portrait-only.jpg" alt="الشخص الوحيد" class="w-full h-72 object-cover rounded-sm">
                 </div>
                 <div class="gallery-item bg-neutral-900 p-2 border border-stone-800 rounded shadow-md overflow-hidden transform hover:scale-105 transition duration-300">
-                    <img src="https://i.postimg.cc/x8dpRP65/shms-a-na-walshms-la-tntfy-a-na-alyqyn-a-thnaʾ-alr-bmaa-na-mrsat-nfsy-walsfynta-na-ʿkaz-nfsy-astqy.jpg" alt="بعض الصور" class="w-full h-72 object-cover rounded-sm">
+                    <img src="assets/بعض الصور ما بتكون مجرد ملامح… بتصير لحظة محفوظة خارج الزمن. كل مرة منرجعلها، بنحس بنفس الإحساس،.jpg" alt="بعض الصور" class="w-full h-72 object-cover rounded-sm">
                 </div>
                 <div class="gallery-item bg-neutral-900 p-2 border border-stone-800 rounded shadow-md overflow-hidden transform hover:scale-105 transition duration-300">
-                    <img src="https://i.postimg.cc/5ytK3msQ/portrait-opinion.jpg" alt="الشيخ عبد الحميد" class="w-full h-72 object-cover rounded-sm">
+                    <img src="assets/portrait-sheikh.jpg" alt="الشيخ عبد الحميد" class="w-full h-72 object-cover rounded-sm">
                 </div>
                 <div class="gallery-item bg-neutral-900 p-2 border border-stone-800 rounded shadow-md overflow-hidden transform hover:scale-105 transition duration-300">
-                    <img src="https://i.postimg.cc/5ytK3msQ/portrait-opinion.jpg" alt="شمس أنا" class="w-full h-72 object-cover rounded-sm">
+                    <img src="assets/شمسٌ أنا والشمسُ لا تنطفئ أنا اليقين أثناء الرُبماأنا مرساةُ نفسي والسفينةأنا عكاز نفسي، استقيم .jpg" alt="شمس أنا" class="w-full h-72 object-cover rounded-sm">
                 </div>
                 <div class="gallery-item bg-neutral-900 p-2 border border-stone-800 rounded shadow-md overflow-hidden transform hover:scale-105 transition duration-300">
-                    <img src="https://i.postimg.cc/brvVTRmQ/portrait-story.jpg" alt="في ملامحها حكاية" class="w-full h-72 object-cover rounded-sm">
+                    <img src="assets/portrait-story.jpg" alt="في ملامحها حكاية" class="w-full h-72 object-cover rounded-sm">
                 </div>
                 <div class="gallery-item bg-neutral-900 p-2 border border-stone-800 rounded shadow-md overflow-hidden transform hover:scale-105 transition duration-300">
-                    <img src="https://i.postimg.cc/qq7DLG1X/protrati-only.jpg" alt="A4 رأيكم يهمني" class="w-full h-72 object-cover rounded-sm">
+                    <img src="assets/portrait-opinion.jpg" alt="A4 رأيكم يهمني" class="w-full h-72 object-cover rounded-sm">
                 </div>
                 <div class="gallery-item bg-neutral-900 p-2 border border-stone-800 rounded shadow-md overflow-hidden transform hover:scale-105 transition duration-300">
-                    <img src="https://i.postimg.cc/rmMPdTxy/Capture-d-e-cran-2026-04-30-a-8-12-53-PM.png" alt="Portrait 8" class="w-full h-72 object-cover rounded-sm">
+                    <img src="assets/Capture d’écran 2026-04-30 à 8.12.53 PM.png" alt="Portrait 8" class="w-full h-72 object-cover rounded-sm">
                 </div>
             </div>
 
@@ -129,19 +162,52 @@
         </div>
     </section>
 
+    <div id="story-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center backdrop-blur-md bg-black bg-opacity-70 p-4">
+        <div id="story-modal-content" class="bg-neutral-900 border border-stone-800 p-6 md:p-8 rounded-sm shadow-2xl max-w-2xl w-full relative max-h-[85vh] flex flex-col">
+            <button id="close-story-modal" class="absolute top-4 left-4 text-stone-400 hover:text-gold text-2xl z-10">✕</button>
+            
+            <h2 class="text-3xl font-extrabold text-gold text-center mb-6">القصة الكاملة والسيرة الفنية</h2>
+            
+            <div class="overflow-y-auto custom-scroll pl-2 pr-1 text-right space-y-6 text-stone-300 leading-relaxed text-justify">
+                <div>
+                    <h3 class="text-gold font-bold text-lg border-b border-stone-800 pb-1 mb-2">📜 كيف بدأت الحكاية؟</h3>
+                    <p>
+                        بدأت رحلتي مع الرسم منذ طفولتي المبكرة، ولكن عند بلوغي الحادية عشرة من عمري، توقفت الفرشاة عن الحركة تماماً. مرت السنوات حتى وصلت لعمر الرابعة عشرة، حينما أعلنت المدرسة عن مسابقة رسم. هنا تدخل أصدقائي وألحّوا عليّ للمشاركة لعلمهم القديم بمهارتي. ورغم أنني لم أفز بتلك المسابقة، إلا أنها أشعلت الشرارة النائمة بداخلي مجدداً. عدت من بعدها بشغف مضاعف، وبدأت ألتهم تقنيات رسم الوجوه وأتحدى نفسي يوماً بعد يوم، حتى وصلت بفضل الله لدرجة من الواقعية تجعل من الصعب التمييز بين اللوحة والصورة الحقيقية.
+                    </p>
+                </div>
+
+                <div>
+                    <h3 class="text-gold font-bold text-lg border-b border-stone-800 pb-1 mb-2">📐 فلسفة الرياضيات والفن</h3>
+                    <p>
+                        كطالبة في تخصص الرياضيات بجامعة باجي مختار، أجد أن هذا العلم الأكاديمي الصارم قد صقل طريقتي الفنية بشكل غير مباشر. الرياضيات علمتني العقلانية التامة والهدوء؛ علمتني أن لكل مشكلة حتماً حل. عندما أواجه تعقيداً في أبعاد البورتريه، بدل أن أغضب أو أمزق الورقة كما يفعل الكثيرون، أتوقف، وأراجع قياساتي الرياضية بهدوء لأجد الخلل وأصلحه. الفن بالنسبة لي هو دمج بين انضباط العقل وعاطفة الروح. لوحتي "سيادة الألم" تختزل فلسفتي الشخصية، فهي تجسد قدرة المرأة اللامتناهية على تحمل الوجع والوقوف في وجهه بكل شموخ، محولةً كل ندبة إلى نور خاص بها.
+                    </p>
+                </div>
+
+                <div>
+                    <h3 class="text-gold font-bold text-lg border-b border-stone-800 pb-1 mb-2">💼 الخبرات المهنية والإنجازات (Professional CV)</h3>
+                    <ul class="list-disc list-inside space-y-2 text-stone-300 pl-4">
+                        <li><span class="text-cream font-semibold">مدرسة رسم بورتريه بالرصاص (منذ 2021 - حتى الآن):</span> تقديم برامج تدريبية ومكثفة للمبتدئين لتعليم أساسيات التظليل، الأبعاد، والنسب التشريحية للوجوه.</li>
+                        <li><span class="text-cream font-semibold">فنانة بورتريه مستقلة:</span> إنجاز أكثر من 150 لوحة بورتريه واقعية مخصصة لزبائن من مختلف الأماكن، وبيع لوحات أصلية متميزة.</li>
+                        <li><span class="text-cream font-semibold">صانعة محتوى تعليمي ومؤلفة:</span> أدير مجتمعاً فنياً يضم أكثر من 11 ألف متابع على إنستغرام، وقمت بتأليف ونشر كتابي التعليمي الخاص الذي بيعت منه عشرات النسخ لمساعدة الرسامين في الحفاظ على شغفهم وبناء عادتهم اليومية.</li>
+                        <li><span class="text-cream font-semibold">المعارض الفنية:</span> شاركت في 6 معارض فنية جماعية، وأقمت 4 معارض فردية خاصة لعرض أعمالي الواقعية.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div id="book-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center backdrop-blur-md bg-black bg-opacity-60 p-4">
         <div id="book-modal-content" class="bg-neutral-900 border border-stone-800 p-8 rounded-sm shadow-2xl max-w-md w-full relative">
             <button id="close-book-modal" class="absolute top-4 left-4 text-stone-400 hover:text-gold text-2xl">✕</button>
             <h2 id="book-form-title" class="text-2xl font-extrabold text-gold text-center mb-2">طلب الحصول على الكتاب الرقمي</h2>
-            <p id="book-form-subtitle" class="text-stone-400 text-sm text-center mb-6">يرجى ملء البيانات لتأكيد الطلب واستلام نسخة الكتاب</p>
             <form id="book-purchase-form" class="text-right">
                 <div class="book-form-step active" id="book-step-1">
-                    <label id="lbl-book-name" class="block text-gold font-bold mb-2">الاسم الكامل / Full Name</label>
+                    <label class="block text-gold font-bold mb-2">الاسم الكامل / Full Name</label>
                     <input type="text" id="book-cust-name" required class="w-full bg-stone-950 border border-stone-700 p-3 rounded-sm text-cream text-center">
-                    <div class="text-center"><button type="button" onclick="nextBookStep(2)" class="mt-6 bg-gold text-midnight px-6 py-2 font-bold hover:bg-yellow-500 transition">التالي / Next</button></div>
+                    <div class="text-center"><button type="button" onclick="nextBookStep(2)" class="mt-6 bg-gold text-midnight px-6 py-2 font-bold hover:bg-yellow-500 transition">التالي</button></div>
                 </div>
                 <div class="book-form-step hidden" id="book-step-2">
-                    <label id="lbl-book-email" class="block text-gold font-bold mb-2">البريد الإلكتروني / Email Address</label>
+                    <label class="block text-gold font-bold mb-2">البريد الإلكتروني / Email Address</label>
                     <input type="email" id="book-cust-email" required class="w-full bg-stone-950 border border-stone-700 p-3 rounded-sm text-cream text-center" placeholder="name@email.com">
                     <div class="flex justify-center gap-4 mt-6">
                         <button type="button" onclick="prevBookStep(1)" class="border border-stone-600 px-6 py-2 text-stone-400 hover:text-cream">رجوع</button>
@@ -149,9 +215,9 @@
                     </div>
                 </div>
                 <div class="book-form-step hidden" id="book-step-3">
-                    <label id="lbl-book-contact" class="block text-gold text-sm font-bold mb-1">رقم الواتساب أو الإنستغرام</label>
+                    <label class="block text-gold text-sm font-bold mb-1">رقم الواتساب أو الإنستغرام</label>
                     <input type="text" id="book-cust-contact" required class="w-full bg-stone-950 border border-stone-700 p-2 rounded-sm text-cream text-center mb-4" placeholder="@username / +000">
-                    <label id="lbl-book-country" class="block text-gold text-sm font-bold mb-1">البلد / Country</label>
+                    <label class="block text-gold text-sm font-bold mb-1">البلد / Country</label>
                     <input type="text" id="book-cust-country" required class="w-full bg-stone-950 border border-stone-700 p-2 rounded-sm text-cream text-center">
                     <div class="flex justify-center gap-4 mt-6">
                         <button type="button" onclick="prevBookStep(2)" class="border border-stone-600 px-6 py-2 text-stone-400 hover:text-cream">رجوع</button>
@@ -160,8 +226,8 @@
                 </div>
             </form>
             <div id="book-success-msg" class="hidden text-center py-6">
-                <h3 id="txt-book-thanks" class="text-2xl font-bold text-gold mb-2">شكراً لطلبك</h3>
-                <p id="txt-book-callback" class="text-stone-300">تم تسجيل طلب الكتاب، سنرسل لك تفاصيل الدفع والنسخة الكاملة فوراً.</p>
+                <h3 class="text-2xl font-bold text-gold mb-2">شكراً لطلبك</h3>
+                <p class="text-stone-300">تم تسجيل طلب الكتاب بنجاح في قاعدة البيانات.</p>
             </div>
         </div>
     </div>
@@ -169,26 +235,25 @@
     <div id="portrait-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center backdrop-blur-md bg-black bg-opacity-60 p-4">
         <div id="portrait-modal-content" class="bg-neutral-900 border border-stone-800 p-8 rounded-sm shadow-2xl max-w-md w-full relative">
             <button id="close-portrait-modal" class="absolute top-4 left-4 text-stone-400 hover:text-gold text-2xl">✕</button>
-            <h2 id="port-sec-title" class="text-2xl font-extrabold text-gold text-center mb-2">طلب رسم بورتريه خاص</h2>
-            <p id="port-sec-subtitle" class="text-stone-400 text-sm text-center mb-6">حول صورك المفضلة إلى تحفة فنية مرسومة بعناية</p>
+            <h2 class="text-2xl font-extrabold text-gold text-center mb-2">طلب رسم بورتريه خاص</h2>
             <form id="portrait-form" class="text-right">
                 <div class="form-step active" id="step-1">
-                    <label id="lbl-name" class="block text-gold font-bold mb-2">الاسم الكامل / Full Name</label>
+                    <label class="block text-gold font-bold mb-2">الاسم الكامل / Full Name</label>
                     <input type="text" id="cust-name" required class="w-full bg-stone-950 border border-stone-700 p-3 rounded-sm text-cream text-center">
-                    <div class="text-center"><button type="button" onclick="nextStep(2)" class="mt-6 bg-gold text-midnight px-6 py-2 font-bold hover:bg-yellow-500 transition">التالي / Next</button></div>
+                    <div class="text-center"><button type="button" onclick="nextStep(2)" class="mt-6 bg-gold text-midnight px-6 py-2 font-bold hover:bg-yellow-500 transition">التالي</button></div>
                 </div>
                 <div class="form-step hidden" id="step-2">
-                    <label id="lbl-contact" class="block text-gold font-bold mb-2">رقم الهاتف أو حساب الإنستغرام</label>
-                    <input type="text" id="cust-contact" required class="w-full bg-stone-950 border border-stone-700 p-3 rounded-sm text-cream text-center" placeholder="@username / +000">
+                    <label class="block text-gold font-bold mb-2">رقم الهاتف أو حساب الإنستغرام</label>
+                    <input type="text" id="cust-contact" required class="w-full bg-stone-950 border border-stone-700 p-3 rounded-sm text-cream text-center" placeholder="@username / +213...">
                     <div class="flex justify-center gap-4 mt-6">
                         <button type="button" onclick="prevStep(1)" class="border border-stone-600 px-6 py-2 text-stone-400 hover:text-cream">رجوع</button>
                         <button type="button" onclick="nextStep(3)" class="bg-gold text-midnight px-6 py-2 font-bold hover:bg-yellow-500 transition">التالي</button>
                     </div>
                 </div>
                 <div class="form-step hidden" id="step-3">
-                    <label id="lbl-country" class="block text-gold text-sm font-bold mb-1">البلد / Country</label>
+                    <label class="block text-gold text-sm font-bold mb-1">البلد / Country</label>
                     <input type="text" id="cust-country" required class="w-full bg-stone-950 border border-stone-700 p-2 rounded-sm text-cream text-center mb-4">
-                    <label id="lbl-date" class="block text-gold text-sm font-bold mb-1">تاريخ الحاجة للوحة / Required Date</label>
+                    <label class="block text-gold text-sm font-bold mb-1">تاريخ الحاجة للوحة / Required Date</label>
                     <input type="date" id="cust-date" required class="w-full bg-stone-950 border border-stone-700 p-2 rounded-sm text-cream text-center">
                     <div class="flex justify-center gap-4 mt-6">
                         <button type="button" onclick="prevStep(2)" class="border border-stone-600 px-6 py-2 text-stone-400 hover:text-cream">رجوع</button>
@@ -197,12 +262,33 @@
                 </div>
             </form>
             <div id="success-msg" class="hidden text-center py-6">
-                <h3 id="txt-thanks" class="text-2xl font-bold text-gold mb-2">شكراً لثقتك بفننا</h3>
-                <p id="txt-callback" class="text-stone-300">لقد تم تسجيل طلبك بنجاح، سوف نتصل بك لاحقاً.</p>
+                <h3 class="text-2xl font-bold text-gold mb-2">شكراً لثقتك بفننا</h3>
+                <p class="text-stone-300">تم تسجيل طلب البورتريه الخاص بك بنجاح.</p>
             </div>
         </div>
     </div>
 
+    <footer class="bg-neutral-950 border-t border-stone-900 py-12 w-full text-center relative">
+        <div class="container mx-auto px-4 space-y-6">
+            <div class="text-xl font-bold tracking-widest text-gold opacity-80">WIWI SHARMA</div>
+            
+            <div class="flex justify-center items-center gap-8 text-3xl">
+                <a href="https://www.instagram.com/wiwi_portfolio" target="_blank" class="text-gold icon-glow" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://wa.me/213662511677" target="_blank" class="text-gold icon-glow" title="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="https://www.youtube.com/@wiwi_portfolio_channel" target="_blank" class="text-gold icon-glow" title="YouTube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </div>
+            
+            <p class="text-stone-600 text-xs mt-4">© 2026 WIWI SHARMA. جميع الحقوق محفوظة للفنانة.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="app.js"></script>
 </body>
 </html>
