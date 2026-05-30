@@ -165,39 +165,36 @@
         </div>
     </section>
 
-    <div id="story-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center backdrop-blur-md bg-black bg-opacity-70 p-4">
-        <div id="story-modal-content" class="bg-neutral-900 border border-stone-800 p-6 md:p-8 rounded-sm shadow-2xl max-w-2xl w-full relative max-h-[80vh] flex flex-col">
-            <button id="close-story-modal" class="absolute top-4 left-4 text-stone-400 hover:text-gold text-2xl z-10">✕</button>
+    <div id="story-modal" class="hidden fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 p-4 overflow-y-auto">
+    <div id="story-modal-content" class="bg-darkGray max-w-3xl w-full rounded-xl p-6 md:p-8 relative text-white border border-gold max-h-[90vh] overflow-y-auto shadow-2xl">
+        <button id="close-story-modal" class="absolute top-4 right-4 text-gray-400 hover:text-gold text-2xl transition-colors">&times;</button>
+        
+        <h2 id="story-modal-title" class="text-2xl md:text-3xl font-bold text-gold border-b border-gold pb-4 mb-6 text-center font-serif">القصة الكاملة والسيرة الفنية</h2>
+        
+        <div class="space-y-6 text-right leading-relaxed text-gray-300">
+            <div>
+                <h3 id="story-sec1-title" class="text-xl font-semibold text-cream mb-2 flex items-center gap-2 justify-start">📜 كيف بدأت الحكاية؟</h3>
+                <p id="story-sec1-body">بدأت رحلتي مع الرسم منذ طفولتي المبكرة، ولكن عند بلوغي الحادية عشرة من عمري، توقفت الفرشاة عن الحركة تماماً. مرت السنوات حتى وصلت لعمر الرابعة عشرة، حينما أعلنت المدرسة عن مسابقة رسم. هنا تدخل أصدقائي وألحّوا عليّ للمشاركة لعلمهم القديم بمهارتي. ورغم أنني لم أفز بتلك المسابقة، إلا أنها أشعلت الشرارة النائمة بداخلي مجدداً. عدت من بعدها بشغف مضاعف، وبدأت ألتهم تقنيات رسم الوجوه وأتحدى نفسي يوماً بعد يوم، حتى وصلت لدرجة من الواقعية تجعل من الصعب التمييز بين اللوحة والصورة الحقيقية.</p>
+            </div>
             
-            <h2 class="text-3xl font-extrabold text-gold text-center mb-6">القصة الكاملة والسيرة الفنية</h2>
+            <div>
+                <h3 id="story-sec2-title" class="text-xl font-semibold text-cream mb-2 flex items-center gap-2 justify-start">📐 فلسفة الرياضيات والفن</h3>
+                <p id="story-sec2-body">كطالبة في تخصص الرياضيات بجامعة باجي مختار، أجد أن هذا العلم الأكاديمي الصارم قد صقل طريقتي الفنية بشكل غير مباشر. الرياضيات علمتني العقلانية التامة والهدوء؛ علمتني أن لكل مشكلة حتماً حل. عندما أواجه تعقيداً في أبعاد البورتريه، بدل أن أغضب أو أمزق الورقة، أتوقف، وأراجع قياساتي الرياضية بهدوء لأجد الخلل وأصلحه. الفن بالنسبة لي هو دمج بين انضباط العقل وعاطفة الروح. لوحتي 'سيادة الألم' تختزل فلسفتي الشخصية، فهي تجسد قدرة المرأة اللامتناهية على تحمل الوجع والوقوف في وجهه بكل شموخ، محولةً كل ندبة إلى نور خاص بها.</p>
+            </div>
             
-            <div class="overflow-y-auto custom-scroll pl-2 pr-1 text-right space-y-6 text-stone-300 leading-relaxed text-justify">
-                <div>
-                    <h3 class="text-gold font-bold text-lg border-b border-stone-800 pb-1 mb-2">📜 كيف بدأت الحكاية؟</h3>
-                    <p>
-                        بدأت رحلتي مع الرسم منذ طفولتي المبكرة، ولكن عند بلوغي الحادية عشرة من عمري، توقفت الفرشاة عن الحركة تماماً. مرت السنوات حتى وصلت لعمر الرابعة عشرة، حينما أعلنت المدرسة عن مسابقة رسم. هنا تدخل أصدقائي وألحّوا عليّ للمشاركة لعلمهم القديم بمهارتي. ورغم أنني لم أفز بتلك المسابقة، إلا أنها أشعلت الشرارة النائمة بداخلي مجدداً. عدت من بعدها بشغف مضاعف، وبدأت ألتهم تقنيات رسم الوجوه وأتحدى نفسي يوماً بعد يوم، حتى وصلت لدرجة من الواقعية تجعل من الصعب التمييز بين اللوحة والصورة الحقيقية.
-                    </p>
-                </div>
-
-                <div>
-                    <h3 class="text-gold font-bold text-lg border-b border-stone-800 pb-1 mb-2">📐 فلسفة الرياضيات والفن</h3>
-                    <p>
-                        كطالبة في تخصص الرياضيات بجامعة باجي مختار، أجد أن هذا العلم الأكاديمي الصارم قد صقل طريقتي الفنية بشكل غير مباشر. الرياضيات علمتني العقلانية التامة والهدوء؛ علمتني أن لكل مشكلة حتماً حل. عندما أواجه تعقيداً في أبعاد البورتريه، بدل أن أغضب أو أمزق الورقة، أتوقف، وأراجع قياساتي الرياضية بهدوء لأجد الخلل وأصلحه. الفن بالنسبة لي هو دمج بين انضباط العقل وعاطفة الروح. لوحتي "سيادة الألم" تختزل فلسفتي الشخصية، فهي تجسد قدرة المرأة اللامتناهية على تحمل الوجع والوقوف في وجهه بكل شموخ، محولةً كل ندبة إلى نور خاص بها.
-                    </p>
-                </div>
-
-                <div>
-                    <h3 class="text-gold font-bold text-lg border-b border-stone-800 pb-1 mb-2">💼 الخبرات المهنية والإنجازات (CV)</h3>
-                    <ul class="list-disc list-inside space-y-2 text-stone-300 pl-4">
-                        <li><span class="text-cream font-semibold">مدرسة رسم بورتريه بالرصاص (منذ 2021 - حتى الآن):</span> تقديم برامج تدريبية ومكثفة للمبتدئين لتعليم أساسيات التظليل والأبعاد.</li>
-                        <li><span class="text-cream font-semibold">فنانة بورتريه مستقلة:</span> إنجاز أكثر من 150 لوحة بورتريه واقعية مخصصة لزبائن من مختلف الأماكن.</li>
-                        <li><span class="text-cream font-semibold">صانعة محتوى ومؤلفة:</span> أدير مجتمعاً فنياً يضم أكثر من 11 ألف متابع على إنستغرام، وقمت بتأليف ونشر كتابي التعليمي الخاص لمساعدة الرسامين في الحفاظ على شغفهم وبناء عادتهم اليومية.</li>
-                        <li><span class="text-cream font-semibold">المعارض الفنية:</span> شاركت في 6 معارض فنية جماعية، وأقمت 4 معارض فردية خاصة لعرض أعمالي الواقعية.</li>
-                    </ul>
-                </div>
+            <div>
+                <h3 id="story-sec3-title" class="text-xl font-semibold text-cream mb-2 flex items-center gap-2 justify-start">💼 الخبرات المهنية والإنجازات (CV)</h3>
+                <ul class="list-disc list-inside space-y-3 pr-4 text-gray-300">
+                    <li><span class="text-cream font-semibold">مدرسة رسم بورتريه بالرصاص (منذ 2021 - حتى الآن):</span> تقديم برامج تدريبية ومكثفة للمبتدئين لتعليم أساسيات التظليل والأبعاد.</li>
+                    <li><span class="text-cream font-semibold">فنانة بورتريه مستقلة:</span> إنجاز أكثر من 150 لوحة بورتريه واقعية مخصصة لزبائن من مختلف الأماكن.</li>
+                    <li><span class="text-cream font-semibold">صانعة محتوى ومؤلفة:</span> أدير مجتمعاً فنياً يضم أكثر من 11 ألف متابع على إنستغرام، وقمت بتأليف ونشر كتابي التعليمي الخاص لمساعدة الرسامين في الحفاظ على شغفهم وبناء عادتهم اليومية.</li>
+                    <li><span class="text-cream font-semibold">المعارض الفنية:</span> شاركت في 6 معارض فنية جماعية، وأقمت 4 معارض فردية خاصة لعرض أعمالي الواقعية.</li>
+                </ul>
             </div>
         </div>
     </div>
+</div>
+
 
     <div id="book-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center backdrop-blur-md bg-black bg-opacity-60 p-4">
         <div id="book-modal-content" class="bg-neutral-900 border border-stone-800 p-8 rounded-sm shadow-2xl max-w-md w-full relative">
